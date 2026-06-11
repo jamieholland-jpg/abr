@@ -121,7 +121,7 @@
   .chip{padding:11px 16px;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:.12s}
   .chip.sel{background:var(--teal-700);color:#fff;border-color:var(--teal-700)}
   .chips.rate{gap:6px;flex-wrap:nowrap}
-  .chips.rate .chip,.chip.sm{padding:6px 11px;font-size:12.5px;border-width:1.5px}
+  .chips.rate .chip{padding:6px 11px;font-size:12.5px;border-width:1.5px}
 
   .selcard{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;margin-bottom:10px;background:#fff;transition:.12s}
   .selcard.sel{border-color:var(--teal-700);background:var(--teal-50)}
@@ -446,9 +446,9 @@
       </div>
       <div class="sectlabel">What I tried</div>
       <div class="card">
-        <div class="row"><div class="t">Mirror therapy</div><span class="chip sm" style="background:#fff5ec;border-color:#f9c89b;color:#c2410c">A little</span></div>
-        <div class="row"><div class="t">Desensitization</div><span class="chip sm" style="background:#fef0f0;border-color:#f3b4b1;color:#d6453f">No relief</span></div>
-        <div class="row"><div class="t">Over-the-counter pain reliever</div><span class="chip sm" style="background:#effdf3;border-color:#a7e8bd;color:#15803d">Helped</span></div>
+        <div class="row"><div class="t">Mirror therapy</div><span class="badge" style="background:#fff5ec;color:#c2410c">A little</span></div>
+        <div class="row"><div class="t">Desensitization</div><span class="badge" style="background:#fef0f0;color:#d6453f">No relief</span></div>
+        <div class="row"><div class="t">Over-the-counter pain reliever</div><span class="badge" style="background:#effdf3;color:#15803d">Helped</span></div>
       </div>
     </div>
   </section>
@@ -502,14 +502,12 @@
       </div>
       <div class="sectlabel">My limbs</div>
       <div class="card">
-        <div class="row"><div><div class="t">🦵 Right · below knee</div><div class="s">Since June 2019</div></div><span class="chev">›</span></div>
-        <div class="row" style="justify-content:center;color:var(--teal-700);font-weight:700;cursor:pointer">+ Add a limb</div>
+        <div class="row" style="border:none"><div><div class="t">🦵 Right · below knee</div><div class="s">Since June 2019</div></div><span class="chev">›</span></div>
       </div>
+      <button class="btn btn-ghost" style="margin-bottom:4px">＋ Add a limb</button>
       <div class="sectlabel">Medications for phantom pain</div>
-      <div class="card">
-        <div class="row"><div class="t">💊 Gabapentin 300mg</div><span class="chev">›</span></div>
-        <div class="row" style="justify-content:center;color:var(--teal-700);font-weight:700;cursor:pointer">+ Add medication</div>
-      </div>
+      <div class="medlist" id="medListProfile"><span class="medpill">Gabapentin 300mg<button onclick="this.parentNode.remove()">✕</button></span></div>
+      <button class="btn btn-ghost" onclick="addMed('medListProfile')">＋ Add medication</button>
       <div class="sectlabel">Settings</div>
       <div class="card">
         <div class="row"><div class="t">Daily check-in reminder</div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
